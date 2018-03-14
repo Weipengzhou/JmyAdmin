@@ -113,3 +113,15 @@ export function delJinDu(text){
 export function getCompanyZixunList(text){
     return post('http://127.0.0.1:8000/getCompanyZixunList', 'id=' + text)
 }
+export function getCompanyZixunAbout(text){
+    return post('http://127.0.0.1:8000/getCompanyZixunAbout', 'id=' + text)
+}
+export function gaiCompanyZixunAbout(text) {
+    return post('http://127.0.0.1:8000/gaiCompanyZixunAbout', 'id=' + text.values.id+'&title='+text.values.title+'&content='+text.content+'&addtime='+text.values.addtime)
+}
+export function delCompanyZixunList(text){
+    return post('http://127.0.0.1:8000/delCompanyZixunList', 'id=' + text)
+}
+export function addCompanyZixun(text){
+    return post('http://127.0.0.1:8000/addCompanyZixun', 'pid=' + text.pid + '&title=' + text.values.title + '&content=' + text.content + '&addtime=' + text.values.addtime)
+}

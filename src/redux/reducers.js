@@ -72,8 +72,8 @@ let initState={
           message: ''
         },
         designList:[],
-        gongdiMessage: [{ id: '1', gid: '1866', gname: '金地梅陇', overstatus: '5', address: '深圳市宝安区', leixing: '0', s_city: '深圳市', area: '120', price: '12万' }]
-
+        gongdiMessage: [{ id: '1', gid: '1866', gname: '金地梅陇', overstatus: '5', address: '深圳市宝安区', leixing: '0', s_city: '深圳市', area: '120', price: '12万' }],
+  CompanyZixunAbout: { id: 1, title: '', content: ' ', addtime:'1520574846 ',pid:'1'}
     
 }
 
@@ -145,6 +145,11 @@ const reducer = (state=initState,action)=>  {
         return Object.assign({}, state, {
           CompanyZixunList: action.text
         })  
+      case types.REDUX_COMPANY_ZIXUN_ABOUT:
+      return Object.assign({},state,{
+        CompanyZixunAbout:action.text
+      })  
+
         default:
         return state 
     }

@@ -7,15 +7,13 @@ import * as action from '../../../redux/actions';
 import timestampToTime from '../../../Components/Day/Day'
 const confirm = Modal.confirm;
 
-function showConfirm(e, d, f) {
-
+function showConfirm(e, d,f) {
+    console.log(e,d,f)
     confirm({
         title: '提示',
         content: '确定要删除么?',
         onOk() {
-            return new Promise((resolve, reject) => {
-                setTimeout(Math.random() > 0.5 ? resolve : reject, 500);
-            }).catch(e.delJinDu({ id: d, gid: f }));
+           e.delCompanyZixunList({id:d,pid:f})
         },
         onCancel() { },
     });
@@ -31,7 +29,7 @@ class CompanyInformation extends Component {
         this.props.getCompanyZixunList(this.props.location.query.id)
     }
     handleClick = () => {
-        this.props.history.push({ pathname: '/Index/CompanyAdmin/' + this.props.location.query.id + '/AddGongdi', query: { id: this.props.location.query.id } })
+        this.props.history.push({ pathname: '/Index/CompanyAdmin/' + this.props.location.query.id + '/AddCompanyInformation', query: { id: this.props.location.query.id } })
     }
 
 
@@ -67,7 +65,7 @@ class CompanyInformation extends Component {
                 fixed: 'right',
                 width: 100,
                 render: (text, index) => (  //塞入内容       
-                    <a onClick={() => showConfirm(this.props, text.id, text.gid)}>删除</a>
+                    <a onClick={() => showConfirm(this.props, text.id,text.pid)}>删除</a>
                 )
             },
 

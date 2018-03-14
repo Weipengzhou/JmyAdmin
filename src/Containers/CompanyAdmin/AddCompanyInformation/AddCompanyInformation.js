@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Form, Input, Select, Button, DatePicker } from 'antd';
 import Ueditor from '../Ueditor';
-import './BianJiCompanyZixun.less'
+import './AddCompanyInformation.less'
 import moment from 'moment';
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -33,16 +33,16 @@ const submitFormLayout = {
 class Index extends Component {
     constructor(props) {
         super(props);
-       
+
         this.state = {
-            editorState:''
+            editorState: ''
         }
     }
 
     componentDidMount() {
-        this.props.getCompanyZixunAbout(this.props.location.query.gid)
+        console.log()
     }
-  
+
     handleSubmit = (e) => {
         var content = new Date().UE.getEditor('content').getContent();
         this.props.form.validateFields((err, fieldsValue) => {
@@ -53,44 +53,31 @@ class Index extends Component {
                 ...fieldsValue,
                 'addtime': fieldsValue['addtime'].format('X'),
             };
-          
-            this.props.gaiCompanyZixunAbout({ values: values, content: content, pid: this.props.CompanyZixunAbout.pid})
+
+            this.props.addCompanyZixun({ values: values, content: content, pid: this.props.location.query.id })
         });
 
     }
-   
- 
-  
+
+
+
     render() {
 
         const { getFieldDecorator } = this.props.form;
-        const { CompanyZixunAbout} =this.props;
-        const config = { initialValue: moment(CompanyZixunAbout.addtime, 'X') }
+        var day = moment().format('YYYY/MM/DD')
+        const config = { initialValue: moment(day, 'YYYY/MM/DD') }
         return (
-            <div className='BianJiCompanyZixun'>
+            <div className='AddCompanyInformation'>
 
-                <FormItem style={{ display: 'none' }}
-                    {...formItemLayout}
-                    label="id"
-                >
+                
 
-                    {getFieldDecorator('id', {
-                        initialValue: this.props.location.query.gid,
-
-                    })(
-                        <Input style={{ width: '200px' }} disabled />
-
-                        )}
-
-                </FormItem>
-               
                 <FormItem
                     {...formItemLayout}
-                    
+
                     label="标题"
                 >
                     {getFieldDecorator('title', {
-                        initialValue: CompanyZixunAbout.title,
+                        initialValue: '',
 
                     })(
                         <Input style={{ width: '200px' }} />
@@ -98,13 +85,13 @@ class Index extends Component {
                         )}
 
                 </FormItem>
-              
-                
+
+
 
                 <FormItem
                     {...formItemLayout}
                     label="添加日期"
-                   
+
                 >
                     {getFieldDecorator('addtime', config)(
                         <DatePicker />
@@ -118,11 +105,11 @@ class Index extends Component {
                     label="内容"
 
                 >
-                    <Ueditor id="content" height="200" value={CompanyZixunAbout.content} /> 
+                    <Ueditor id="content" height="200" value={''} />
 
                 </FormItem>
-               
-              
+
+
                 <FormItem {...submitFormLayout} style={{ marginTop: 32 }}>
 
                     <Button style={{ marginLeft: 8 }} onClick={this.handleSubmit.bind(this)}>保存</Button>
@@ -133,7 +120,7 @@ class Index extends Component {
 }
 
 function mapStateToProps(state) {
-    return { CompanyZixunAbout: state.reducers.CompanyZixunAbout }
+    return { }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -141,5 +128,5 @@ function mapDispatchToProps(dispatch) {
         ...bindActionCreators(action, dispatch)
     }
 }
-const BianJiCompanyZixun = Form.create()(Index);
-export default connect(mapStateToProps, mapDispatchToProps)(BianJiCompanyZixun);
+const AddCompanyInformation = Form.create()(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCompanyInformation);

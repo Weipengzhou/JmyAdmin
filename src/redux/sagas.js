@@ -5,6 +5,7 @@ import * as actions from './actions';
 import {push} from 'react-router-redux';
 import {notification} from 'antd'
 import { type } from 'os';
+import { cunCompanyZixunAbout } from './actions';
 function* logIn(e) {
     try {
        
@@ -414,6 +415,77 @@ function* getCompanyZixunList(e){
 
     }
 }
+function* getCompanyZixunAbout(e){
+    try{
+        const result = yield call(apis.getCompanyZixunAbout, e.text)
+        yield put(actions.reduxCompanyZixunAbout(result))
+    }catch(err){
+
+    }
+}
+function* gaiCompanyZixunAbout(e){
+    console.log(e)
+    try{
+        const result = yield call(apis.gaiCompanyZixunAbout, e.text)
+        if (result.code == 1) {
+            notification['success']({
+                message: '提示',
+                description: '修改成功',
+            });
+            // yield put(push({ pathname: '/Index/CompanyAdmin/' + e.text.pid + '/CompanyInformation', query: { id: e.text.pid } }))
+
+        } else {
+            notification['success']({
+                error: '提示',
+                description: '修改失败',
+            });
+        }
+    }catch(err){
+
+    }
+}
+
+function* delCompanyZixunList(e){
+    console.log(e)
+    try{
+        const result=yield call(apis.delCompanyZixunList, e.text.id)
+        if (result.code == 1) {
+            notification['success']({
+                message: '提示',
+                description: '删除成功',
+            });
+
+            yield put(actions.getCompanyZixunList(e.text.pid))
+        } else {
+            notification['success']({
+                error: '提示',
+                description: '删除失败',
+            });
+        }
+    }catch(err){
+
+    }
+}
+function* addCompanyZixun(e){
+    try{
+        const result = yield call(apis.addCompanyZixun, e.text)
+        if (result.code == 1) {
+            notification['success']({
+                message: '提示',
+                description: '添加成功',
+            });
+            yield put(push({ pathname: '/Index/CompanyAdmin/' + e.text.pid + '/CompanyInformation', query: { id: e.text.pid } }))
+
+        } else {
+            notification['success']({
+                error: '提示',
+                description: '添加失败',
+            });
+        }
+    }catch(err){
+
+    }
+}
 export default function* defaultSaga() {
     yield [
         takeLatest(types.LOG_IN, logIn),
@@ -442,5 +514,9 @@ export default function* defaultSaga() {
         takeLatest(types.NEW_JINDU_IMG, newJinDuImg),
         takeLatest(types.DEL_JINDU, delJinDu),
         takeLatest(types.GET_COMPANY_ZIXUN_LIST, getCompanyZixunList),
+        takeLatest(types.GET_COMPANY_ZIXUN_ABOUT, getCompanyZixunAbout),
+        takeLatest(types.GAI_COMPANY_ZIXUN_ABOUT, gaiCompanyZixunAbout),
+        takeLatest(types.DEL_COMPANY_ZIXUN_LIST, delCompanyZixunList),
+        takeLatest(types.ADD_COMPANY_ZIXUN, addCompanyZixun),
     ];
 }

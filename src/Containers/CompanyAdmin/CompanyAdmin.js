@@ -13,7 +13,7 @@ import BianjiGongdi from './BianjiGongdi/BianjiGongdi';
 import JinDu from './JinDu/JinDu';
 import AddGongdi from './AddGongdi/AddGongdi';
 import BianJiCompanyZixun from './BianJiCompanyZixun/BianJiCompanyZixun'
-
+import AddCompanyInformation from './AddCompanyInformation/AddCompanyInformation'
 const { Content, Sider } = Layout;
 
 class CompanyAdmin extends Component{
@@ -56,6 +56,7 @@ class CompanyAdmin extends Component{
                         <Route path={'/Index/CompanyAdmin/' + id + '/JinDu'} component={JinDu} />
                         <Route path={'/Index/CompanyAdmin/' + id + '/AddGongdi'} component={AddGongdi} />
                         <Route path={'/Index/CompanyAdmin/' + id + '/BianJiCompanyZixun'} component={BianJiCompanyZixun} />
+                        <Route path={'/Index/CompanyAdmin/' + id + '/AddCompanyInformation'} component={AddCompanyInformation} />
                     </Content>
                 </Layout>
             </div>

@@ -37,7 +37,13 @@ export const CUN_JINDU_IMG = 'CUN_JINDU_IMG'        //发出存储施工阶段�
 export const DEL_JINDU_IMG = 'DEL_JINDU_IMG'        //发出删除施工阶段图片请求
 export const NEW_JINDU_IMG ='NEW_JINDU_IMG'         //发出存储新建施工阶段请求
 export const DEL_JINDU = 'DEL_JINDU'                //发出删除施工请求
-export const GET_COMPANY_ZIXUN_LIST ='GET_COMPANY_ZIXUN_LIST' //发出获取公司咨询请求
-export const REDUX_COMPANY_ZIXUN_LIST = 'REDUX_COMPANY_ZIXUN_LIST' //将公司咨询存入redux
+export const GET_COMPANY_ZIXUN_LIST ='GET_COMPANY_ZIXUN_LIST' //发出获取公司信息请求
+export const REDUX_COMPANY_ZIXUN_LIST = 'REDUX_COMPANY_ZIXUN_LIST' //将公司资讯存入redux
+export const DEL_COMPANY_ZIXUN_LIST = 'DEL_COMPANY_ZIXUN_LIST' // 发出删除咨询请求
+export const GET_COMPANY_ZIXUN_ABOUT = 'GET_COMPANY_ZIXUN_ABOUT' //发出获取公司资讯详细信息请求
+export const REDUX_COMPANY_ZIXUN_ABOUT = 'REDUX_COMPANY_ZIXUN_ABOUT' //将公司资讯详细信息存入redux
+export const GAI_COMPANY_ZIXUN_ABOUT = 'GAI_COMPANY_ZIXUN_ABOUT' //发出存储修改资讯信息请求
+export const ADD_COMPANY_ZIXUN ='ADD_COMPANY_ZIXUN' //发出新建咨询请求
+
 
  

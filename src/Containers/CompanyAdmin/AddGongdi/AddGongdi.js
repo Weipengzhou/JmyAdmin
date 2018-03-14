@@ -88,8 +88,6 @@ class Index extends Component {
 
 
         }
-        console.log(this.state)
-
     }
   
     render() {
