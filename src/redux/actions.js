@@ -47,3 +47,4 @@ export const reduxCompanyZixunAbout = (text) => ({ type: types.REDUX_COMPANY_ZIX
 export const gaiCompanyZixunAbout=(text)=>({type:types.GAI_COMPANY_ZIXUN_ABOUT,text})
 export const delCompanyZixunList = (text) => ({ type: types.DEL_COMPANY_ZIXUN_LIST,text})
 export const addCompanyZixun = (text) => ({ type: types.ADD_COMPANY_ZIXUN,text})
+export const userLogin = (text)=>({type:types.USER_LOGIN,text})

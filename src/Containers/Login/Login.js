@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from '../../redux/actions';
 import Log from 'ant-design-pro/lib/Login';
-import { Alert, Checkbox } from 'antd';
+import { Alert } from 'antd';
 import './Login.css';
-import Ajax from '../../Components/Ajax/Ajax'
-const { Tab, UserName, Password, Mobile, Captcha, Submit } = Log;
+const { Tab, UserName, Password,  Submit } = Log;
 
 class Login extends Component{
     constructor(props){
@@ -31,7 +30,6 @@ class Login extends Component{
       }
       
     render(){
-        const {login_res,notice}=this.props;
         return(
             <div className='Login'>
                 <div className='header'>

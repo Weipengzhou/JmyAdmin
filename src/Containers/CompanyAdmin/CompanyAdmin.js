@@ -31,7 +31,7 @@ class CompanyAdmin extends Component{
                             defaultOpenKeys={['sub1']}
                             style={{ height: '100%', borderRight: 0 }}
                         >
-                            <Menu.Item key="0">郑州佳士得装修公司</Menu.Item>
+                            <Menu.Item key="0">个人中心</Menu.Item>
                             <Menu.Item key="1"><Link to={{ pathname: '/Index/CompanyAdmin/'+id+'/BasicInformation',query:{id:id}}}>基础信息</Link></Menu.Item>
                             <Menu.Item key="2"><Link to={{ pathname: '/Index/CompanyAdmin/' + id + '/ChangePassword', query: { id: id } }}>密码修改</Link></Menu.Item>
                             <Menu.Item key="3"><Link to={{ pathname: '/Index/CompanyAdmin/' + id + '/QualificationManagement', query: { id: id } }} >资质管理</Link></Menu.Item>

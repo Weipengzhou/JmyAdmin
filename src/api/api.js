@@ -29,6 +29,9 @@ function post(url,data) {
 export function logIn(text) {
     return post('http://127.0.0.1:8000/LOG_IN','username='+text.username+'&password='+text.password)
 }
+export function userLogin(text) {
+    return post('http://127.0.0.1:8000/userLogin', 'username=' + text.username + '&password=' + text.password)
+}
 export function postZhaobiao(text) {
    
     return post('http://127.0.0.1:8000/POST_Zhaobiao','s_city='+text)

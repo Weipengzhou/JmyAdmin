@@ -1,11 +1,11 @@
-import { call, put, takeLatest, select} from 'redux-saga/effects';
+import { call, put, takeLatest} from 'redux-saga/effects';
 import * as apis from '../api/api';
 import * as types from './types';
 import * as actions from './actions';
 import {push} from 'react-router-redux';
 import {notification} from 'antd'
-import { type } from 'os';
-import { cunCompanyZixunAbout } from './actions';
+
+
 function* logIn(e) {
     try {
        
@@ -30,6 +30,24 @@ function* logIn(e) {
         
      }
 }
+
+function* UserLogin(e){
+        try{
+            const result = yield call(apis.userLogin, e.text);
+            if (result.login_res.code == 1) {
+                yield put(push('Index/CompanyAdmin/' + result.login_res.id+'/BasicInformation'));
+
+            } else if (result.login_res.code == 0) {
+
+                yield put(actions.loginStatuFail())
+            } else {
+                alert('登陆失败，请与管理员联系')
+            }
+        }catch(err){
+
+        }
+    }
+
 function* postZhaobiao(e) {
     try {
      
@@ -518,5 +536,6 @@ export default function* defaultSaga() {
         takeLatest(types.GAI_COMPANY_ZIXUN_ABOUT, gaiCompanyZixunAbout),
         takeLatest(types.DEL_COMPANY_ZIXUN_LIST, delCompanyZixunList),
         takeLatest(types.ADD_COMPANY_ZIXUN, addCompanyZixun),
+        takeLatest(types.USER_LOGIN, UserLogin),
     ];
 }

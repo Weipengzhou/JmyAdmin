@@ -5,7 +5,7 @@ import history from './history';
 import { Provider} from 'react-redux';
 import Index from './Containers/Index/Index';
 import Login from './Containers/Login/Login';
-
+import UserLogin from './Containers/UserLogin/UserLogin';
 
 
 import configureStore from './redux/store'
@@ -19,8 +19,9 @@ export default class Navrouter extends Component {
 
                 <ConnectedRouter  history={history}>                     
                                    <div>
-                                        <Route exact path="/" component={Login} />
-                                        <Route path="/Index" component={Index} />       
+                                        <Route exact path="/Admin" component={Login} />
+                                        <Route path="/Index" component={Index} />    
+                                         <Route path="/UserLogin" component={UserLogin}/>  
                                     </div>                                           
                 </ConnectedRouter >
                 </Provider>
