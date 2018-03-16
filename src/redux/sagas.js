@@ -32,10 +32,11 @@ function* logIn(e) {
 }
 
 function* UserLogin(e){
+  
         try{
             const result = yield call(apis.userLogin, e.text);
             if (result.login_res.code == 1) {
-                yield put(push('Index/CompanyAdmin/' + result.login_res.id+'/BasicInformation'));
+                yield put(push({ pathname: '/UserIndex/Memberlist/' + result.login_res.id + '/BasicInformation', query: { id: result.login_res.id}}));
 
             } else if (result.login_res.code == 0) {
 

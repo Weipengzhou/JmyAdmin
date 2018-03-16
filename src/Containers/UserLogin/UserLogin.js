@@ -16,8 +16,12 @@ class UserLogin extends Component {
         }
     }
 
-    onSubmit = (err, values) => {
+    onSubmit = (err, value) => {
         if (!err) {
+            const values={
+                ...value,
+
+            }
             this.props.userLogin(values)
 
         }

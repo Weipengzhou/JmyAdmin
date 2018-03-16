@@ -19,7 +19,9 @@ const { Content, Sider } = Layout;
 class CompanyAdmin extends Component{
   
     render(){
+       
             const id = this.props.location.query.id
+
         return(
             <div className='CompanyAdmin'>
                 <Layout style={{ height: '100%' }} >

@@ -6,7 +6,7 @@ import { Provider} from 'react-redux';
 import Index from './Containers/Index/Index';
 import Login from './Containers/Login/Login';
 import UserLogin from './Containers/UserLogin/UserLogin';
-
+import UserIndex from './Containers/UserIndex/UserIndex';
 
 import configureStore from './redux/store'
 let store = configureStore();// , 
@@ -21,7 +21,8 @@ export default class Navrouter extends Component {
                                    <div>
                                         <Route exact path="/Admin" component={Login} />
                                         <Route path="/Index" component={Index} />    
-                                         <Route path="/UserLogin" component={UserLogin}/>  
+                                        <Route path="/UserLogin" component={UserLogin}/>  
+                                         <Route path="/UserIndex" component={UserIndex} />  
                                     </div>                                           
                 </ConnectedRouter >
                 </Provider>
