@@ -15,6 +15,7 @@ class DesignTeam extends Component {
     }
     componentDidMount(){
         this.props.getDesign(this.props.location.query.id)
+        console.log(this.props.location.query.href + '/AddDesign')
     }
     handleClick(e){
         this.props.delDesign(e)
@@ -29,7 +30,7 @@ class DesignTeam extends Component {
             
                    
                     <div className='ant-upload ant-upload-select ant-upload-select-picture-card'>
-                        <Link to={{ pathname: '/Index/CompanyAdmin/' + this.props.location.query.id + '/AddDesign', query: { id: this.props.location.query.id } }}>
+                    <Link to={{ pathname: this.props.location.query.href + '/AddDesign', query: { id: this.props.location.query.id, href: this.props.location.query.href } }}>
                             <span className='ant-upload' role='button'>
                             <input type="file" accept="" style={{ 'display': 'none' }} />
                             <i className="anticon anticon-plus"></i>

@@ -56,7 +56,7 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        
+       
     }
  
 
@@ -68,7 +68,7 @@ class Index extends Component {
             const values = {
                 ...fieldsValue,
             };
-            this.props.newJinDuImg({ values: values, imagename: this.state.imageUrl,gid:this.props.location.query.id })
+            this.props.newJinDuImg({ values: values, imagename: this.state.imageUrl,gid:this.props.location.query.id,href:this.props.location.query.href })
 
         });
 

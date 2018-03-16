@@ -63,6 +63,7 @@ class Index extends Component {
             }
             const values = {
                 ...fieldsValue,
+                href:this.props.location.query.href
             };
             this.props.cunDesign(values)
          

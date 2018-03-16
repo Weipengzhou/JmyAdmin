@@ -30,7 +30,7 @@ class ConstructionSite extends Component {
         this.props.getGongdiList(this.props.location.query.id)
     }
     handleClick = () => {
-        this.props.history.push({ pathname: '/Index/CompanyAdmin/' + this.props.location.query.id + '/AddGongdi', query: { id: this.props.location.query.id } })
+        this.props.history.push({ pathname: this.props.location.query.href + '/AddGongdi', query: { id: this.props.location.query.id, href: this.props.location.query.href } })
     }
     
 
@@ -77,7 +77,7 @@ class ConstructionSite extends Component {
                 fixed: 'right',
                 width: 100,
                 render: (text, index) => { //塞入内容           
-                    return <Link to={{ pathname: '/Index/CompanyAdmin/' + text.gid + '/BianjiGongdi', query: { id: text.gid, gid: text.id } }}>编辑</Link>
+                    return <Link to={{ pathname: this.props.location.query.href + '/BianjiGongdi', query: { id: text.gid, gid: text.id, href: this.props.location.query.href } }}>编辑</Link>
                 }
             },
             {
@@ -86,7 +86,7 @@ class ConstructionSite extends Component {
                 fixed: 'right',
                 width: 100,
                 render: (text, index) => (  //塞入内容       
-                    <Link to={{ pathname: '/Index/CompanyAdmin/' + text.gid + '/JinDu', query: { id: text.gid, gid: text.id } }}>编辑</Link>
+                    <Link to={{ pathname: this.props.location.query.href + '/JinDu', query: { id: text.gid, gid: text.id, href: this.props.location.query.href } }}>编辑</Link>
                 )
             },
             {

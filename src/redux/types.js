@@ -2,7 +2,6 @@ export const GET_CITY ='GET_CITY';                 //城市
 export const LOG_IN = 'LOG_IN'                     //登陆
 export const LOGIN_STATU ='LOGIN_STATU'            //登录验证状态成功
 export const LOGIN_STATU_FAIL ='LOGIN_STATU_FAIL'  //登录验证状态失败
-
 export const POST_ZHAOBIAO ='POST_ZHAOBIAO'        //发起获取招标
 export const GET_ZHAOBIAO ='GET_ZHAOBIAO'          //获取招标列表
 export const XIU_GAI_ID = 'XIU_GAI_ID'             //发出修改标内容id
@@ -45,7 +44,6 @@ export const GET_COMPANY_ZIXUN_ABOUT = 'GET_COMPANY_ZIXUN_ABOUT' //发出获取�
 export const REDUX_COMPANY_ZIXUN_ABOUT = 'REDUX_COMPANY_ZIXUN_ABOUT' //将公司资讯详细信息存入redux
 export const GAI_COMPANY_ZIXUN_ABOUT = 'GAI_COMPANY_ZIXUN_ABOUT' //发出存储修改资讯信息请求
 export const ADD_COMPANY_ZIXUN ='ADD_COMPANY_ZIXUN' //发出新建咨询请求
-
 export const USER_LOGIN ='USER_LOGIN' //发出用户登陆请求
 
  

@@ -13,7 +13,6 @@ class Memberlist extends Component{
  
     componentDidMount(){
       this.props.postMember(this.props.first_city)
-    
     }
     render(){
       const columns = [
@@ -70,7 +69,7 @@ class Memberlist extends Component{
           fixed: 'right',
           width: 100,
           render: (text, index) => (  //塞入内容       
-            <Link to={{ pathname: '/Index/CompanyAdmin/' + text.id + '/BasicInformation', query: { id: text.id } }}>管理</Link>
+            <Link to={{ pathname: this.props.match.url + '/' + text.id + '/BasicInformation', query: { id: text.id} }}>管理</Link>
           )
         },
       ];

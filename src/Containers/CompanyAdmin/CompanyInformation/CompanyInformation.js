@@ -29,7 +29,7 @@ class CompanyInformation extends Component {
         this.props.getCompanyZixunList(this.props.location.query.id)
     }
     handleClick = () => {
-        this.props.history.push({ pathname: '/Index/CompanyAdmin/' + this.props.location.query.id + '/AddCompanyInformation', query: { id: this.props.location.query.id } })
+        this.props.history.push({ pathname: this.props.location.query.href + '/AddCompanyInformation', query: { id: this.props.location.query.id, href: this.props.location.query.href } })
     }
 
 
@@ -55,7 +55,7 @@ class CompanyInformation extends Component {
                 fixed: 'right',
                 width: 100,
                 render: (text, index) => { //塞入内容           
-                    return <Link to={{ pathname: '/Index/CompanyAdmin/' + text.pid + '/BianJiCompanyZixun', query: { id: text.pid, gid: text.id } }}>编辑</Link>
+                    return <Link to={{ pathname: this.props.location.query.href + '/BianJiCompanyZixun', query: { id: text.pid, gid: text.id, href: this.props.location.query.href} }}>编辑</Link>
                 }
             },
             

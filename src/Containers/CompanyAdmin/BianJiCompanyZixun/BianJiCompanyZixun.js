@@ -54,7 +54,7 @@ class Index extends Component {
                 'addtime': fieldsValue['addtime'].format('X'),
             };
           
-            this.props.gaiCompanyZixunAbout({ values: values, content: content, pid: this.props.CompanyZixunAbout.pid})
+            this.props.gaiCompanyZixunAbout({ values: values, content: content, pid: this.props.CompanyZixunAbout.pid,href:this.props.location.query.href})
         });
 
     }

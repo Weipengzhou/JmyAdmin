@@ -9,7 +9,7 @@ function get(url) {
     return fetch(url, defaultOptions)
         .then(parseJSON)
         .catch(() => {
-            throw new Error('嘿嘿');
+            throw new Error('error');
         });
 }
 function post(url,data) {
@@ -22,7 +22,7 @@ function post(url,data) {
     return fetch(url, defaultOptions)
     .then((res)=>{return res.json()})
     .catch(() => {
-      throw new Error('嘿嘿');
+      throw new Error('error');
     });
 }
 

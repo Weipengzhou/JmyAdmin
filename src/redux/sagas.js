@@ -280,15 +280,17 @@ function* delDesign(e){
 }
 
 function* cunDesign(e){
-    
+   
     try{
         const result = yield call(apis.cunDesign,e.text)
+      
         if (result.code == 1) {
             notification['success']({
                 message: '提示',
                 description: '添加成功',
             });
-            yield put(push({ pathname: '/Index/CompanyAdmin/' + e.text.sid + '/DesignTeam', query: { id: e.text.sid } }))
+          
+            yield put(push({ pathname: e.text.href + '/DesignTeam', query: { id: e.text.sid, href: e.text.href } }))
 
         } else {
             notification['success']({
@@ -393,7 +395,7 @@ function* newJinDuImg(e){
                 message: '提示',
                 description: '添加成功',
             });
-            yield put(push({ pathname: '/Index/CompanyAdmin/' + e.text.gid + '/ConstructionSite', query: { id: e.text.gid } }))
+            yield put(push({ pathname: e.text.href + '/ConstructionSite', query: { id: e.text.gid,href:e.text.href } }))
         } else {
             notification['success']({
                 error: '提示',
@@ -492,7 +494,7 @@ function* addCompanyZixun(e){
                 message: '提示',
                 description: '添加成功',
             });
-            yield put(push({ pathname: '/Index/CompanyAdmin/' + e.text.pid + '/CompanyInformation', query: { id: e.text.pid } }))
+            yield put(push({ pathname:e.text.href+ '/CompanyInformation', query: { id: e.text.pid,href:e.text.href } }))
 
         } else {
             notification['success']({

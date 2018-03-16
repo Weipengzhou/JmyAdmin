@@ -56,6 +56,7 @@ class Index extends Component {
             }
 
             componentDidMount() {
+          
                 this.props.xiuGaicom(this.props.location.query.id)
                 
             }

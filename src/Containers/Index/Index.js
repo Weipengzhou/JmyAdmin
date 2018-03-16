@@ -87,16 +87,16 @@ class Index extends Component {
                         <Layout style={{marginLeft:'200px' }}>
        
                           <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280,position:'relative' }}>
-                             
-                                    <Route path="/Index/List" component={List} />
-                                    <Route path="/Index/Addlist" component={Addlist} />
-                                    <Route path="/Index/Bianji/:id" component={Bianji} />
-                                    <Route path="/Index/Memberlist" component={Memberlist} />
-                                    <Route path="/Index/Bmemberlist/:id" component={Bmemberlist} />
-                                    <Route path="/Index/Addmember" component={Addmember} />
-                                    <Route path="/Index/Success" component={Success} /> 
-                                    <Route path="/Index/CompanyAdmin/:id" component={CompanyAdmin} /> 
-                         
+              
+                            <Route path={`${this.props.match.path}/List`} component={List} />
+                            <Route path={`${this.props.match.path}/Addlist`} component={Addlist} />
+                            <Route path={`${this.props.match.path}/Bianji/:id`} component={Bianji} />
+                            <Route path={`${this.props.match.path}/Memberlist`} exact component={Memberlist} />
+                            <Route path={`${this.props.match.path}/Addmember`} component={Addmember} />
+                            <Route path={`${this.props.match.path}/Success`} component={Success} />
+                            <Route path={`${this.props.match.path}/Bmemberlist/:id`} component={Bmemberlist} />
+                            <Route path={`${this.props.match.path}/Memberlist/:id`} component={CompanyAdmin} />
+                           
                          </Content>
                          </Layout>
                        
