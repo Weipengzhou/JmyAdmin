@@ -27,17 +27,18 @@ class Index extends Component {
 
     }
     handleClick(e){
+        console.log(e)
         this.props.firstCity(e.item.props.children)
         this.props.postZhaobiao(e.item.props.children)
         this.props.postMember(e.item.props.children)
     }
 
     componentDidMount(){
-        console.log(this.props.model_statu)
+
     }
 
     render() {
-        const { city, model_statu} =this.props;
+        const { city } =this.props;
      
         return (
              
@@ -56,7 +57,9 @@ class Index extends Component {
                             onClick={this.handleClick.bind(this)}
                         >
                         
-                        {city.map((result,index)=>(<Menu.Item key={index} >{result}</Menu.Item>))}
+                        {city.map((result,index)=>(
+                                    <Menu.Item key={index} >{result}</Menu.Item>
+                        ))}
                             
                     
                         </Menu>
