@@ -1,6 +1,6 @@
 import { call, put, takeLatest} from 'redux-saga/effects';
 import * as apis from '../api/api';
-import * as types from './types';
+import { types } from './types';
 import * as actions from './actions';
 import {push} from 'react-router-redux';
 import {notification} from 'antd'
@@ -507,6 +507,14 @@ function* addCompanyZixun(e){
 
     }
 }
+function* getNewsList(e){
+    try{
+        const result = yield call(apis.getNewsList,e.text)
+        yield put(actions.reduxNewsList(result))
+    }catch(err){
+
+    }
+}
 export default function* defaultSaga() {
     yield [
         takeLatest(types.LOG_IN, logIn),
@@ -540,5 +548,6 @@ export default function* defaultSaga() {
         takeLatest(types.DEL_COMPANY_ZIXUN_LIST, delCompanyZixunList),
         takeLatest(types.ADD_COMPANY_ZIXUN, addCompanyZixun),
         takeLatest(types.USER_LOGIN, UserLogin),
+        takeLatest(types.GET_NEWS_LIST, getNewsList)
     ];
 }

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from '../../redux/actions';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import { Route, Switch,Link,Redirect} from 'react-router-dom';
+import { Layout, Menu, Icon } from 'antd';
+import { Route,Link} from 'react-router-dom';
 import List from '../List/List';
 import Addlist from '../Addlist/Addlist';
 import Bianji from '../Bianji/Bianji';
@@ -13,7 +13,7 @@ import Addmember from '../Addmember/Addmember';
 import CompanyAdmin from '../CompanyAdmin/CompanyAdmin';
 import Success from '../Success/Success';
 import './Index.less';
-import { posix } from 'path';
+
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -27,7 +27,6 @@ class Index extends Component {
 
     }
     handleClick(e){
-        console.log(e)
         this.props.firstCity(e.item.props.children)
         this.props.postZhaobiao(e.item.props.children)
         this.props.postMember(e.item.props.children)
@@ -99,7 +98,7 @@ class Index extends Component {
                             <Route path={`${this.props.match.path}/Success`} component={Success} />
                             <Route path={`${this.props.match.path}/Bmemberlist/:id`} component={Bmemberlist} />
                             <Route path={`${this.props.match.path}/Memberlist/:id`} component={CompanyAdmin} />
-                           
+                            
                          </Content>
                          </Layout>
                        

@@ -29,6 +29,7 @@ function post(url,data) {
 export function logIn(text) {
     return post('http://127.0.0.1:8000/LOG_IN','username='+text.username+'&password='+text.password)
 }
+
 export function userLogin(text) {
     return post('http://127.0.0.1:8000/userLogin', 'username=' + text.username + '&password=' + text.password)
 }
@@ -127,4 +128,7 @@ export function delCompanyZixunList(text){
 }
 export function addCompanyZixun(text){
     return post('http://127.0.0.1:8000/addCompanyZixun', 'pid=' + text.pid + '&title=' + text.values.title + '&content=' + text.content + '&addtime=' + text.values.addtime)
+}
+export function getNewsList(text){
+    return post('http://127.0.0.1:8000/getNewsList')
 }

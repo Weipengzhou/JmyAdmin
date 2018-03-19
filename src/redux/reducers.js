@@ -1,5 +1,6 @@
-import * as  types  from './types';
-import { type } from 'os';
+import { types }  from './types';
+import NewsList from '../Containers/Edit/News/NewsList';
+
 let initState={
     notice:'',
     first_city:'郑州',
@@ -73,8 +74,8 @@ let initState={
         },
         designList:[],
         gongdiMessage: [{ id: '1', gid: '1866', gname: '金地梅陇', overstatus: '5', address: '深圳市宝安区', leixing: '0', s_city: '深圳市', area: '120', price: '12万' }],
-  CompanyZixunAbout: { id: 1, title: '', content: ' ', addtime:'1520574846 ',pid:'1'}
-    
+       CompanyZixunAbout: { id: 1, title: '', content: ' ', addtime:'1520574846 ',pid:'1'},
+      NewsList:[]
 }
 
 const reducer = (state=initState,action)=>  {
@@ -149,7 +150,10 @@ const reducer = (state=initState,action)=>  {
       return Object.assign({},state,{
         CompanyZixunAbout:action.text
       })  
-
+      case types.REDUX_NEWS_LIST:
+        return Object.assign({}, state, {
+          NewsList: action.text
+        })  
         default:
         return state 
     }

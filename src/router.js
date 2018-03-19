@@ -7,7 +7,7 @@ import Index from './Containers/Index/Index';
 import Login from './Containers/Login/Login';
 import UserLogin from './Containers/UserLogin/UserLogin';
 import UserIndex from './Containers/UserIndex/UserIndex';
-
+import Edit from './Containers/Edit/Edit'
 import configureStore from './redux/store'
 let store = configureStore();// , 
 
@@ -23,6 +23,7 @@ export default class Navrouter extends Component {
                                         <Route path="/Index" component={Index} />    
                                         <Route path="/UserLogin" component={UserLogin}/>  
                                          <Route path="/UserIndex" component={UserIndex} />  
+                                         <Route path="/Edit" component={Edit} />  
                                     </div>                                           
                 </ConnectedRouter >
                 </Provider>
