@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Upload, Icon, Modal, Form, message } from 'antd';
 import './JinDu.less';
-
+import path from '../../../url';
 
 function beforeUpload(file) {
     const typeOk =
@@ -117,7 +117,7 @@ class Index extends Component {
             <div className='JinDu'>
                 <p>准备开工</p>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={jinDuImgOne}
@@ -130,7 +130,7 @@ class Index extends Component {
                 </Upload>
                 <p>水电阶段</p>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={jinDuImgTwo}
@@ -143,7 +143,7 @@ class Index extends Component {
                 </Upload>
                 <p>泥木阶段</p>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={jinDuImgThree}
@@ -156,7 +156,7 @@ class Index extends Component {
                 </Upload>
                  <p>油漆阶段</p>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={jinDuImgFour}
@@ -169,7 +169,7 @@ class Index extends Component {
                 </Upload>
                 <p>竣工阶段</p>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={jinDuImgFive}

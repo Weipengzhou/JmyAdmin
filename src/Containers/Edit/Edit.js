@@ -66,7 +66,7 @@ class Edit extends Component {
                                 <Route path={`${this.props.match.path}/BaiKeList`} component={BaiKeList}/>
                                 <Route path={`${this.props.match.path}/EffectDiagramList`} component={EffectDiagramList} />
                                 <Route path={`${this.props.match.path}/NewsList`} component={NewsList} />
-                                <Route path={`${this.props.match.path}/NewsList/:id/Modify`} component={Modify} />
+                                {/* <Route path={`${this.props.match.path}/NewsList/:id/Modify`} component={Modify} /> */}
                         </Content>
                     </Layout>
              </div>

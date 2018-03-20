@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Form, Input, Select, Button, Upload, Icon, message, Radio } from 'antd';
-
+import path from '../../../url';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -118,9 +118,9 @@ class Index extends Component {
                             showUploadList={false}
                             beforeUpload={beforeUpload}
                             onChange={this.handleChange}
-                            action="http://127.0.0.1:8000/LOGO_UPLOAD"
+                            action={path+"/LOGO_UPLOAD"}
                         >
-                            {imageUrl ? <img src={'http://127.0.0.1:8000/uploads/' + imageUrl} alt="" /> : uploadButton}
+                        {imageUrl ? <img src={path +'/uploads/' + imageUrl} alt="" /> : uploadButton}
                         </Upload>
 
                         )}

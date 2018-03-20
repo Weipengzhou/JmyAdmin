@@ -19,11 +19,12 @@ export default class Navrouter extends Component {
 
                 <ConnectedRouter  history={history}>                     
                                    <div>
+                                        <Route path="/UserLogin" component={UserLogin} />  
+                                        <Route path="/UserIndex" component={UserIndex} />
+                                        <Route path="/Edit" component={Edit} />  
                                         <Route exact path="/Admin" component={Login} />
                                         <Route path="/Index" component={Index} />    
-                                        <Route path="/UserLogin" component={UserLogin}/>  
-                                         <Route path="/UserIndex" component={UserIndex} />  
-                                         <Route path="/Edit" component={Edit} />  
+                                
                                     </div>                                           
                 </ConnectedRouter >
                 </Provider>

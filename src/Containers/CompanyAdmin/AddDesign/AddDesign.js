@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Form, Input, Select, Button, Upload, Icon, message } from 'antd';
-
+import path from '../../../url';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -80,7 +80,7 @@ class Index extends Component {
         if (info.file.status === 'done') {
             // Get this url from response in real world.
             this.setState({
-                imageUrl: 'http://127.0.0.1:8000/uploads/' + info.file.response.data.url,
+                imageUrl: path+'/uploads/' + info.file.response.data.url,
                 loading: false,
             })
 
@@ -124,7 +124,7 @@ class Index extends Component {
                             showUploadList={false}
                             beforeUpload={beforeUpload}
                             onChange={this.handleChange}
-                            action="http://127.0.0.1:8000/LOGO_UPLOAD"
+                            action={path+"/LOGO_UPLOAD"}
                         >
                             {imageUrl ? <img src={imageUrl} alt="" /> : uploadButton}
                         </Upload>

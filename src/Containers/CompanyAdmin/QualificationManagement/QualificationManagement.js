@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Upload, Icon, Modal, Form,  message } from 'antd';
-
+import path from '../../../url';
 
 
 function beforeUpload(file) {
@@ -83,7 +83,7 @@ class Index extends Component {
         return (
             <div className='QualificationManagement'>
                 <Upload
-                    action="http://127.0.0.1:8000/ZIZHI_UPLOAD"
+                    action={path+"/ZIZHI_UPLOAD"}
                     name="avatar"
                     listType="picture-card"
                     fileList={fileList}
