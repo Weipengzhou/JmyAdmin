@@ -75,7 +75,9 @@ let initState={
         designList:[],
         gongdiMessage: [{ id: '1', gid: '1866', gname: '金地梅陇', overstatus: '5', address: '深圳市宝安区', leixing: '0', s_city: '深圳市', area: '120', price: '12万' }],
        CompanyZixunAbout: { id: 1, title: '', content: ' ', addtime:'1520574846 ',pid:'1'},
-      NewsList:[]
+      NewsList:[],
+      count:10,
+       page:1
 }
 
 const reducer = (state=initState,action)=>  {
@@ -105,7 +107,8 @@ const reducer = (state=initState,action)=>  {
         
         case types.GET_MEMBER:
         return Object.assign({}, state, {
-          'company_list':action.text.biao
+          'company_list':action.text.rows,
+          'count': action.text.count
         });
         case types.GET_GAI_COM:
   
@@ -154,6 +157,10 @@ const reducer = (state=initState,action)=>  {
         return Object.assign({}, state, {
           NewsList: action.text
         })  
+      case types.REDUX_PAGE:
+        return Object.assign({}, state, {
+          page: action.text
+        })    
         default:
         return state 
     }

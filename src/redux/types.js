@@ -48,6 +48,7 @@ export  const types ={
  USER_LOGIN : 'USER_LOGIN', //发出用户登陆请求
  GET_NEWS_LIST:'GET_NEWS_LIST',//发出获取新闻列表请求
  REDUX_NEWS_LIST:'REDUX_NEWS_LIST',//将新闻存到redux
+    REDUX_PAGE:'REDUX_PAGE'  , //页面页码
 }
 
 

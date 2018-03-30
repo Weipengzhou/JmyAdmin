@@ -1,4 +1,4 @@
 
-const url = 'http://admin.zxjmy.com:3000';
+const url = 'http://127.0.0.1:8000';
 
 export default url;

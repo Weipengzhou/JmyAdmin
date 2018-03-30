@@ -29,7 +29,8 @@ class Index extends Component {
     handleClick(e){
         this.props.firstCity(e.item.props.children)
         this.props.postZhaobiao(e.item.props.children)
-        this.props.postMember(e.item.props.children)
+        this.props.postMember({s_city:e.item.props.children,page:1})
+        this.props.reduxPage(1)
     }
 
     componentDidMount(){

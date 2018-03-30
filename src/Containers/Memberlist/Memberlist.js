@@ -7,12 +7,17 @@ import { Table } from 'antd';
 import timestampToTime from '../../Components/Day/Day'
 
 
-  
+
 
 class Memberlist extends Component{
- 
+    constructor(props){
+      super(props);
+      this.state={
+        current:1,
+      }
+    }
     componentDidMount(){
-      this.props.postMember(this.props.first_city)
+      this.props.postMember({ s_city: this.props.first_city, page: this.props.page})
     }
     render(){
       const columns = [
@@ -73,17 +78,25 @@ class Memberlist extends Component{
           )
         },
       ];
-      const {company_list} =this.props;
+     
+      const { company_list, count} =this.props;
         return(
             <div className='Memberlist'>
-               <Table columns={columns} dataSource={company_list} rowKey="id" scroll={{ x: 1200 }} />
+            <Table columns={columns} dataSource={company_list} rowKey="id" scroll={{ x: 1200 }} pagination={{
+              total: count,
+              current: this.props.page,  
+              onChange: (page, pageSize) => {
+                this.props.postMember({ s_city: this.props.first_city, page: page })
+                this.props.reduxPage(page)
+              }
+            }} />
             </div>    
         )
     }
 }
 
 function mapStateToProps(state) {
-  return { company_list: state.reducers.company_list, first_city: state.reducers.first_city}
+  return { company_list: state.reducers.company_list, first_city: state.reducers.first_city, count: state.reducers.count,page:state.reducers.page}
   }
   
   function mapDispatchToProps(dispatch) {

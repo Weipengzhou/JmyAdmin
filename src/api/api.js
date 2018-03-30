@@ -51,7 +51,8 @@ export function addGaild(text) {
 }
 
 export function postMember(text) {
-    return post(path+'/POST_Member','s_city='+text)
+    console.log(text)
+    return post(path + '/POST_Member', 's_city=' + text.s_city+'&page='+text.page)
 }
 export function xiuGaicom(text) {
    
