@@ -26,7 +26,7 @@ class DesignTeam extends Component {
 
         return (
             <div className='DesignTeam'>
-                {designList.map((result,index ) => (<div className='ant-design-list-item' key={index}><div className='ant-design-list-item-img'><img src={path+'/uploads/' + result.imagename} alt='' /> </div><p className='ant-design-list-item-name'>{result.name}</p><span className='ant-design-list-item-zhiwei'>{result.zhiwei}</span> <b onClick={this.handleClick.bind(this,result)}>删除</b> </div>))}
+                {designList.map((result, index) => (<div className='ant-design-list-item' key={index}><div className='ant-design-list-item-img'><img src={path +'/Upload/' + result.imagename} alt='' /> </div><p className='ant-design-list-item-name'>{result.name}</p><span className='ant-design-list-item-zhiwei'>{result.zhiwei}</span> <b onClick={this.handleClick.bind(this,result)}>删除</b> </div>))}
             
                    
                     <div className='ant-upload ant-upload-select ant-upload-select-picture-card'>

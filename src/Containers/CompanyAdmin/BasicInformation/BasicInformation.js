@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as action from '../../../redux/actions';
 import { Form, Input, Select, Button, Upload, Icon, message  } from 'antd';
 import path from '../../../url';
-
+import Ueditor from '../Ueditor';
 const FormItem = Form.Item;
 const { Option } = Select;
 
@@ -71,12 +71,14 @@ class Index extends Component {
             }
 
             handleSubmit = (e) => {
+                var content = new Date().UE.getEditor('content').getContent();
                 this.props.form.validateFields((err, fieldsValue) => {
                     if (err) {
                         return;
                     }
                     const values = {
                         ...fieldsValue,
+                        content: content
                     };       
                     
                     this.props.adminGaicom({ values: values, imagename: this.state.imageUrl})
@@ -145,7 +147,7 @@ class Index extends Component {
                         onChange={this.handleChange}
                         action={path+"/LOGO_UPLOAD"}
                     >
-                        {imageUrl ? <img src={path+'/uploads/' + imageUrl} alt="" /> : uploadButton}
+                        {imageUrl ? <img src={path +'/Upload/' + imageUrl} alt="" /> : uploadButton}
                     </Upload>
                    
                 </FormItem>
@@ -258,6 +260,14 @@ class Index extends Component {
                         </Select>
 
                         )}
+                </FormItem>
+                <FormItem
+                    {...formItemLayout}
+                    label="公司简介"
+
+                >
+                    <Ueditor id="content" height="200" value={this.props.c_content.content } />
+
                 </FormItem>
 
                 

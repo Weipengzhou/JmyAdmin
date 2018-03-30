@@ -80,7 +80,7 @@ class Index extends Component {
         if (info.file.status === 'done') {
             // Get this url from response in real world.
             this.setState({
-                imageUrl: path+'/uploads/' + info.file.response.data.url,
+                imageUrl: path + '/Upload/' + info.file.response.data.url,
                 loading: false,
             })
 

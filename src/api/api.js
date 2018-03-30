@@ -67,7 +67,7 @@ export function addGaicom(text) {
 }
 export function adminGaicom(text){
 
-    return post(path+'/adminGaicom', 's_city=' + text.values.s_city + '&lianxiren=' + text.values.lianxiren + '&tel=' + text.values.tel + '&mobile=' + text.values.mobile + '&cname=' + text.values.cname + '&dizhi=' + text.values.dizhi + '&jiawei=' + text.values.jiawei + '&id=' + text.values.id + '&imagename=' + text.imagename)
+    return post(path+'/adminGaicom', 's_city=' + text.values.s_city + '&lianxiren=' + text.values.lianxiren + '&tel=' + text.values.tel + '&mobile=' + text.values.mobile + '&cname=' + text.values.cname + '&dizhi=' + text.values.dizhi + '&jiawei=' + text.values.jiawei + '&id=' + text.values.id + '&imagename=' + text.imagename+'&content='+text.values.content)
 }
 export function xiuGaipassword(text){
     return post(path+'/xiuGaipassword','id='+text.id+'&password='+text.password)

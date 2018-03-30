@@ -120,7 +120,7 @@ class Index extends Component {
                             onChange={this.handleChange}
                             action={path+"/LOGO_UPLOAD"}
                         >
-                        {imageUrl ? <img src={path +'/uploads/' + imageUrl} alt="" /> : uploadButton}
+                        {imageUrl ? <img src={path +'/Upload/' + imageUrl} alt="" /> : uploadButton}
                         </Upload>
 
                         )}
